@@ -3,7 +3,7 @@ export async function POST(request) {
   try {
     const { user_id } = await request.json()
     const subRes = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/dealyze`, {
-      headers: { 'Authorization': `Bearer ${process.env.{{DB_KEY}}}` }
+      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_DEALYZE}` }
     })
     const subData = await subRes.json()
     const subscriptionId = subData?.data?.stripe_subscription_id

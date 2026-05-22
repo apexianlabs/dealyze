@@ -64,7 +64,7 @@ function GeneratePageInner() {
 
   const verdictColors = {
     'Strong Buy': { bg:'#f0fdf4', border:'#bbf7d0', text:'#15803d', emoji:'🟢' },
-    'Buy':        { bg:'#f0fdf4', border:'#bbf7d0', text:'#16a34a', emoji:'✅' },
+    'Buy':        { bg:'#f0fdf4', border:'#bbf7d0', text:'#16a34a', emoji:'🟢' },
     'Borderline': { bg:'#fff7ed', border:'#fed7aa', text:'#d97706', emoji:'🟡' },
     'Pass':       { bg:'#fef2f2', border:'#fecaca', text:'#dc2626', emoji:'🔴' },
   }
@@ -91,13 +91,13 @@ function GeneratePageInner() {
         <Link href="/dashboard" style={{fontSize:13,color:'#64748b',textDecoration:'none'}}>← Dashboard</Link>
       </div>
 
-      <div style={{maxWidth:960,margin:'0 auto',padding:'32px 20px'}}>
+      <div style={{maxWidth:960,margin:'0 auto',padding:'24px 16px'}}>
         <div style={{marginBottom:28}}>
           <h1 style={{fontSize:22,fontWeight:800,color:'#0f172a',marginBottom:6}}>Analyse a property deal</h1>
           <p style={{fontSize:14,color:'#64748b'}}>Enter the numbers and get an instant AI verdict with cash flow, cap rate and max offer price.</p>
         </div>
 
-        <div style={{display:'grid',gridTemplateColumns: result ? '1fr 1fr' : '1fr',gap:24}}>
+        <div style={{display:'grid',gridTemplateColumns: result ? 'clamp(300px, 45%, 460px) 1fr' : '1fr',gap:24,width:'100%'}}>
           {/* Form */}
           <div style={{background:'#fff',borderRadius:14,border:'1px solid #e2e8f0',padding:24}}>
             <h2 style={{fontSize:15,fontWeight:700,color:'#0f172a',marginBottom:20}}>Property Details</h2>

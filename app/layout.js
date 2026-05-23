@@ -1,4 +1,5 @@
 export const metadata = {
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   title: 'Dealyze — AI real estate deal analyser — address in, verdict out',
   description: 'AI real estate deal analyser — address in, verdict out',
 }

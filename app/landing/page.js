@@ -2,22 +2,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const Logo = ({ size = 32 }) => (
+const Logo = ({ size = 32, color = '#16a34a', initial = 'D' }) => (
   <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="dz1" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#4ade80"/>
-        <stop offset="100%" stopColor="#15803d"/>
+      <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor={color} stopOpacity="0.9"/>
+        <stop offset="100%" stopColor={color} stopOpacity="0.6"/>
       </linearGradient>
     </defs>
-    <path d="M50 12 L85 42 L78 42 L78 82 L22 82 L22 42 L15 42 Z" fill="url(#dz1)"/>
-    <rect x="41" y="58" width="18" height="24" rx="3" fill="#15803d"/>
-    <rect x="30" y="50" width="14" height="14" rx="2" fill="white" opacity="0.8"/>
-    <line x1="37" y1="50" x2="37" y2="64" stroke="#15803d" strokeWidth="1.5"/>
-    <line x1="30" y1="57" x2="44" y2="57" stroke="#15803d" strokeWidth="1.5"/>
-    <circle cx="72" cy="72" r="14" fill="white"/>
-    <circle cx="72" cy="72" r="12" fill="#16a34a"/>
-    <path d="M66 72 L70 76 L78 66" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    <rect width="100" height="100" rx="22" fill="url(#lg1)"/>
+    <text x="50" y="68" textAnchor="middle" fontSize="52" fontWeight="900" fontFamily="Arial,sans-serif" fill="white">{initial}</text>
   </svg>
 )
 

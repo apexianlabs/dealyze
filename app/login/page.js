@@ -3,6 +3,17 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
+const Logo = ({ size = 32 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#4ade80"/><stop offset="100%" stopColor="#15803d"/></linearGradient></defs>
+    <path d="M50 12 L85 42 L78 42 L78 82 L22 82 L22 42 L15 42 Z" fill="url(#lg)"/>
+    <rect x="41" y="58" width="18" height="24" rx="3" fill="#15803d"/>
+    <circle cx="72" cy="72" r="14" fill="white"/><circle cx="72" cy="72" r="12" fill="#16a34a"/>
+    <path d="M66 72 L70 76 L78 66" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+  </svg>
+)
+
+
 const GOOGLE_AUTH_URL = `https://wdeilbhnsdlmckovicqy.supabase.co/auth/v1/authorize?provider=google&redirect_to=https%3A%2F%2Fapp.dealyze.app%2Fauth%2Fcallback&scopes=email+profile`
 
 export default function LoginPage() {
@@ -74,7 +85,7 @@ export default function LoginPage() {
     <div style={{width:420,flexShrink:0,background:'#16a34a',display:'flex',flexDirection:'column',padding:'40px',position:'relative',overflow:'hidden'}}>
       <div style={{position:'absolute',top:-80,right:-60,width:280,height:280,borderRadius:'50%',background:'rgba(255,255,255,0.08)'}}/>
       <Link href="/" style={{display:'flex',alignItems:'center',gap:10,marginBottom:48,zIndex:1,textDecoration:'none'}}>
-        <div style={{width:36,height:36,borderRadius:8,background:'rgba(255,255,255,0.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:18,fontWeight:800,color:'#fff'}}>D</div>
+        <Logo size={36}/>
         <span style={{fontSize:20,fontWeight:800,color:'#fff'}}>Dealyze</span>
       </Link>
       <div style={{zIndex:1,marginBottom:40}}>
@@ -99,7 +110,7 @@ export default function LoginPage() {
         <div style={{width:'100%',maxWidth:400}}>
           {isMobile && (
             <Link href="/" style={{display:'flex',alignItems:'center',gap:8,marginBottom:24,textDecoration:'none',justifyContent:'center'}}>
-              <div style={{width:32,height:32,borderRadius:8,background:'#16a34a',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,fontWeight:800,color:'#fff'}}>D</div>
+              <Logo size={36}/>
               <span style={{fontWeight:800,fontSize:18,color:'#0f172a'}}>Dealyze</span>
             </Link>
           )}
